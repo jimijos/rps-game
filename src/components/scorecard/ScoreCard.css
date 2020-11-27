@@ -1,0 +1,21 @@
+.header .scorecard {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 1.2rem;
+  right: 1rem;
+  width: 9rem;
+  background: #fff;
+  height: 7rem;
+  border-radius: 8px;
+}
+.scorecard h3 {
+  color: #515ca4;
+  font-size: 1rem;
+}
+.scorecard p {
+  font-size: 3.5rem;
+  font-weight: bolder;
+}

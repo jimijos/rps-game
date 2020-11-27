@@ -1,0 +1,13 @@
+.basicrules {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    background: transparent;
+    border: 3px solid #888CA7;
+    border-radius: 9px;
+    color: #fff;
+    bottom: 2rem;
+    right: 2rem;
+    letter-spacing: 2px;
+    outline: none;
+}

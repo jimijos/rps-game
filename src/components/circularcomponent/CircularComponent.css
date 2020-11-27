@@ -1,0 +1,55 @@
+.circularcomponent {
+  position: relative;
+  background: #fff;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  padding: 1%;
+}
+
+.circularcomponent.paper {
+  background-image: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  box-shadow: 0 10px 0px -5px rgb(41, 68, 194);
+}
+.circularcomponent.scissor {
+  background-image: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  box-shadow: 0 10px 0px -5px rgb(199, 108, 27);
+}
+.circularcomponent.rock {
+  background-image: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  box-shadow: 0 10px 0px -5px rgb(157, 23, 50);
+}
+
+.circularcomponent img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 50%;
+}
+
+.innerCircle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 9rem;
+  height: 9rem;
+  background: white;
+  border-radius: 50%;
+  box-shadow: inset 0 10px 3px -5px rgb(188, 192, 218);
+}
+
+@media only screen and (max-width: 690px) {
+  .circularcomponent {
+    width: 10rem;
+    height: 10rem;
+  }
+  .innerCircle {
+    width: 7rem;
+    height: 7rem;
+  }
+}
