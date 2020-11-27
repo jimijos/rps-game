@@ -14,7 +14,7 @@ export default function App() {
     console.log(rulesClicked);
     }   
   return (
-    <div className="App"> 
+    <div className="App">  
       <Header />
       <GameBoard />
       <RulesButton handleClick={showRules}/>
