@@ -1,0 +1,36 @@
+.playagain {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    width: 100%;
+    height: 16rem;
+    margin: 2%;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+
+.playagain h1 {
+    width: 250px;
+    font-size: 2.8rem;
+    letter-spacing: 0.3px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10%;
+    color: #fff;
+    text-transform: uppercase;
+}
+.playagain.visible button {
+    width: 200px;
+    height: 45px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 7px;
+    text-transform: uppercase;
+    background: #fff;
+    border: 1px solid #fff;
+    color: crimson;
+}
+
+

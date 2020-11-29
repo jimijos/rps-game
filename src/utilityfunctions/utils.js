@@ -1,9 +1,37 @@
+//images for getImage utility function
+import paperIcon from "../assets/icon-paper.svg";
+import scissorIcon from "../assets/icon-scissors.svg";
+import rockIcon from "../assets/icon-rock.svg";
+// import spockIcon from "../assets/icon-spock.svg";
+// import lizardIcon from "../assets/icon-lizard.svg";
+
+
 
 // returns a random element from given array;
 //can get houseChoice from an array of ['paper', 'rock', 'scissor', 'spock', 'lizard']
+export const choices = ['paper', 'rock', 'scissor'];
 export const getRandomElement = (array) => {
     return array[Math.floor(Math.random()*array.length)];
 }
+
+//get the image for the circular compoent
+
+export const returnImage = (componentName) => {
+    switch (componentName) {
+      case "paper":
+        return <img src={paperIcon} className={`circleIcon ${componentName}`} alt="paper" name={componentName}/>;
+
+      case "scissor":
+        return (
+          <img src={scissorIcon} className={`circleIcon ${componentName}`} alt="scissor" name={componentName}/>
+        );
+
+      case "rock":
+        return <img src={rockIcon} className={`circleIcon ${componentName}`} alt="rock" name={componentName}/>;
+      default:
+        return null;
+    }
+  };
 
 //get the game result object were value property can be used to calculate gameScore
 //the function can be called inside a conditional to check for the availability of both userChoice and houseChoice before it runs
@@ -48,9 +76,9 @@ export const calculateScore = (userScore, gameResult) => {
             if(userScore <= 0){
                 return userScore;
             }else {
-                userScore - 1;
+                return userScore - 1;
             }
-        default:
+        default: 
             return userScore;
     }
 }

@@ -1,4 +1,4 @@
-.playboard {
+.playboard{
     position: absolute;
     display: flex;
     justify-content: space-around;
@@ -7,8 +7,33 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border: 1px solid tomato
+    /* border: 1px solid tomato; */
+    padding: 3% 8% 1% 8%;
+    top: 13rem;
+    width: 48rem;
 }
+
+.playboard .circularcomponent {
+    width: 18rem;
+    height: 18rem;
+}
+.playboard .innerCircle{
+    width: 14rem;
+    height: 14rem;
+}
+
+.playboard-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.playboard-card h2 {
+    color: #fff;
+    padding-bottom: 6%;
+}
+
 
 .playboard.hidden {
     display: none;
