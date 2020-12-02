@@ -85,3 +85,10 @@
     75%  {left: 600px}
     100% {left: 640px}
   }
+
+
+  @media only screen and (max-width: 1000px) {
+    .playboard {
+        width: 36rem;
+    }
+}

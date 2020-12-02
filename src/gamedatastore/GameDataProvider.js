@@ -1,5 +1,6 @@
 import React,{useState, createContext} from 'react';
 
+
 export const gameDataContex = createContext();
 
 const GameDataProvider = ({children}) => {
@@ -22,7 +23,8 @@ const GameDataProvider = ({children}) => {
     ////
     const [userChoice, setUserChoice] = useState('');
     const [houseChoice, setHouseChoice] = useState('');
-    const [gameResult, setGameResult] = useState({})
+    const [gameResult, setGameResult] = useState({});
+    const [isAdvanced, setIsAdvanced] = useState(false);
     let store = {
         userScore,
         setUserScore,
@@ -32,7 +34,9 @@ const GameDataProvider = ({children}) => {
         setHouseChoice,
         gameResult,
         setGameResult,
-        updateUserScore
+        updateUserScore,
+        isAdvanced,
+        setIsAdvanced
     }
     return (
         <gameDataContex.Provider value={store}>

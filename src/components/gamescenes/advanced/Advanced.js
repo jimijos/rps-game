@@ -1,22 +1,26 @@
 import React from "react";
-import "./Basic.css";
+import "./Advanced.css";
 import CircularComponent from "../../circularcomponent/CircularComponent";
 
 
 
-const Basic = () => {
+const Advanced = () => {
 
   return (
-    <div className="basic" > 
-      <div className="basic-top">
-        <CircularComponent hoverable source="basic" componentName="paper" />
-        <CircularComponent hoverable source="basic" componentName="scissor" />
+    <div className="advanced-container" > 
+      <div className="advanced-top">
+        <CircularComponent hoverable source="advanced" componentName="scissor" />
       </div>
-      <div className="basic-bottom">
-        <CircularComponent hoverable source="basic" componentName="rock" />
+      <div className="advanced-middle">
+        <CircularComponent hoverable source="advanced" componentName="spock" />
+        <CircularComponent hoverable source="advanced" componentName="paper" />
+      </div>
+      <div className="advanced-bottom">
+        <CircularComponent hoverable source="advanced" componentName="lizard" />
+        <CircularComponent hoverable source="advanced" componentName="rock" />
       </div>
     </div>
   );
 };
 
-export default Basic;
+export default Advanced;

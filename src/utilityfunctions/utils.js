@@ -2,8 +2,8 @@
 import paperIcon from "../assets/icon-paper.svg";
 import scissorIcon from "../assets/icon-scissors.svg";
 import rockIcon from "../assets/icon-rock.svg";
-// import spockIcon from "../assets/icon-spock.svg";
-// import lizardIcon from "../assets/icon-lizard.svg";
+import spockIcon from "../assets/icon-spock.svg";
+import lizardIcon from "../assets/icon-lizard.svg";
 
 
 
@@ -19,15 +19,19 @@ export const getRandomElement = (array) => {
 export const returnImage = (componentName) => {
     switch (componentName) {
       case "paper":
-        return <img src={paperIcon} className={`circleIcon ${componentName}`} alt="paper" name={componentName}/>;
+        return <img src={paperIcon} className={`${componentName}`} alt="paper"/>;
 
       case "scissor":
-        return (
-          <img src={scissorIcon} className={`circleIcon ${componentName}`} alt="scissor" name={componentName}/>
-        );
+        return <img src={scissorIcon} className={`${componentName}`} alt="scissor"/>
 
       case "rock":
-        return <img src={rockIcon} className={`circleIcon ${componentName}`} alt="rock" name={componentName}/>;
+        return <img src={rockIcon} className={`${componentName}`} alt="rock"/>;
+      case "spock":
+        return  <img src={spockIcon} className={`${componentName}`} alt="scissor"/>
+ 
+    
+      case "lizard":
+        return <img src={lizardIcon} className={`${componentName}`} alt="rock"/>;
       default:
         return null;
     }

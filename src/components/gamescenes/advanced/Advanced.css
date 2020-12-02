@@ -1,6 +1,6 @@
-.basic {
+.advanced-container {
     display: flex;
-    background-image: url("../../../assets/bg-triangle.svg");
+    background-image: url("../../../assets/bg-pentagon.svg");
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
@@ -10,15 +10,24 @@
     /* border: 1px solid #fff; */
   }
   
-  .basic-top {
-    display: flex;
-    justify-content: space-around;
-    padding: 1% 3%; 
-  }
-  
-  .basic-bottom {
+  .advanced-top {
     display: flex;
     justify-content: center;
+    padding: 1% 3%;
+    /* border: 1px solid crimson; */
+  }
+
+  .advanced-middle {
+    display: flex;
+    justify-content: space-between;
+    padding: 1% 3%; 
+    /* border: 1px solid crimson; */
+  }
+  
+  .advanced-bottom {
+    display: flex;
+    justify-content: space-around;
     padding: 1%;
+    /* border: 1px solid crimson; */
   }
   

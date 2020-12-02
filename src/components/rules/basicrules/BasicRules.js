@@ -1,9 +1,14 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import './BasicRules.css';
 import basicRulesImage from '../../../assets/image-rules.svg';
+import advRulesImage from '../../../assets/image-rules-bonus.svg';
+import { gameDataContex } from '../../../gamedatastore/GameDataProvider';
 
 
 const BasicRules = ({rulescard, handleClick}) => {
+    const {
+        isAdvanced
+        } = useContext(gameDataContex); 
     return <div className={rulescard? 'rules-container visible' : 'rules-container hidden'}>
         <div className='card'>
             <div className='card-header'>
@@ -11,7 +16,7 @@ const BasicRules = ({rulescard, handleClick}) => {
                 <button onClick={handleClick}>X</button>
             </div>
             <div className='card-img'>
-                <img src={basicRulesImage} alt='gamerules'/>
+                <img src={isAdvanced? advRulesImage : basicRulesImage} alt='gamerules'/>
             </div>
         </div>
     </div>
