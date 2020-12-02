@@ -37,7 +37,7 @@ export default function App() {
       <Route
             exact
             path={`/${userChoice}`}
-            render={userChoice? (props) => (<PlayBoard />) : (props) => (<GameMainPage />)}/>
+            render={(props) => (<PlayBoard />) : (props) => (<GameMainPage />)}/>
             <Redirect exact from={`/${userChoice}`} to="/" />
       </Switch>
       <RulesButton handleClick={showRules}/>
