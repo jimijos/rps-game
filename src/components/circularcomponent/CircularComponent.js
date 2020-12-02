@@ -1,7 +1,7 @@
 import React,{useContext} from "react";
 import {Link} from 'react-router-dom';
 import "./CircularComponent.css";
-import {returnImage, getRandomElement, getGameResult, calculateScore} from '../../utilityfunctions/utils'
+import { returnImage, getRandomElement, getGameResult } from '../../utilityfunctions/utils'
 import {gameDataContex} from '../../gamedatastore/GameDataProvider';
 
 

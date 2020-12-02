@@ -1,8 +1,5 @@
 import React,{useState, createContext} from 'react';
 
-
-import { getRandomElement, getGameResult, calculateScore } from '../utilityfunctions/utils';
-
 export const gameDataContex = createContext();
 
 const GameDataProvider = ({children}) => {
