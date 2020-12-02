@@ -91,4 +91,71 @@
     .playboard {
         width: 36rem;
     }
+    .playboard .circularcomponent {
+        width: 12rem;
+        height: 12rem;
+    }
+    .playboard .innerCircle {
+        width: 9rem;
+        height: 9rem;
+    }
+    .playboard .circular-spot {
+        position: absolute;
+        margin: 0 auto;
+        transform: translate(-120%, 10%);
+        width: 9rem;
+        height: 9rem;
+        background: #182341;
+        border-radius: 50%;
+    }
+    .playboard h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    .playboard .playagain.visible {
+        position: absolute;
+        top: 100%;
+    }
+    .playboard .playagain.visible h1{
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    .sceneselector, .reset, .basicrules {
+        position: absolute;
+        width: 70px;
+        height: 30px;
+        background: transparent;
+        border: 3px solid #888CA7;
+        border-radius: 9px;
+        color: #fff;
+        letter-spacing: 2px;
+        font-size: 0.5rem;
+        outline: none;
+    }
+
+    .playboard .circular-spot {
+        width: 7rem;
+        height: 7rem;
+        /* transform: translate(-210%, 10%); */
+        animation: spot1 .1s ease-in forwards;
+    }
+    @keyframes spot1 {
+        0% {left: 470px}
+        100% {left: 470px}
+      }
+      .playboard .circularcomponent {
+        width: 10rem;
+        height: 10rem;
+    }
+    .playboard .innerCircle {
+        width: 7rem;
+        height: 7rem;
+    }
+    .playboard .playagain.visible h1{
+        font-size: 1.2rem;
+    }
 }
