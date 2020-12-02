@@ -1,10 +1,10 @@
-import React,{ useContext } from 'react';
+import React,{ useContext, useEffect } from 'react';
 import './PlayAgain.css';
 import {Link} from 'react-router-dom';
 import { getGameResult, calculateScore } from '../../utilityfunctions/utils';
 import {gameDataContex} from '../../gamedatastore/GameDataProvider';
 
-const PlayAgain = () => {
+const PlayAgain = ({clickHandler}) => {
     const {
         userScore,
         userChoice,
@@ -14,13 +14,12 @@ const PlayAgain = () => {
 
     let result = getGameResult(userChoice, houseChoice);
     
-    // useEffect(() => {
-    //     // updateUserScore(calculateScore(userScore, result));
-    //     clickHandler();
-    // }, [clickHandler])
-      const clickHandler = () => {
+    useEffect(() => {
         updateUserScore(calculateScore(userScore, result));
-      }
+    }, [userChoice])
+    //   const clickHandler = () => {
+    //     updateUserScore(calculateScore(userScore, result));
+    //   }
 
     return (<div className='playagain visible' >
                 <h1>{result.text}</h1>
