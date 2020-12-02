@@ -1,7 +1,7 @@
 import React,{useContext} from "react";
 import {Link} from 'react-router-dom';
 import "./CircularComponent.css";
-import { returnImage, getRandomElement, getGameResult } from '../../utilityfunctions/utils'
+import { returnImage, getRandomElement } from '../../utilityfunctions/utils'
 import {gameDataContex} from '../../gamedatastore/GameDataProvider';
 
 
@@ -9,11 +9,12 @@ import {gameDataContex} from '../../gamedatastore/GameDataProvider';
 
 const CircularComponent = ({ componentName, choice }) => { 
   const {
-    userChoice,
+    userScore,
     setUserChoice,
-    houseChoice,
     setHouseChoice,
+    gameResult,
     setGameResult,
+    updateUserScore,
     isAdvanced
 } = useContext(gameDataContex);
 
@@ -25,7 +26,8 @@ const CircularComponent = ({ componentName, choice }) => {
   const clickHandler = (e) => {
     setUserChoice(namechoice);
     setHouseChoice(getRandomElement(choices));
-    setGameResult(getGameResult(userChoice, houseChoice));
+    setGameResult(gameResult);
+    updateUserScore(userScore, gameResult);
   }
   return (
     <div className='notclickable'>

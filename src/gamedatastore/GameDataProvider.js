@@ -1,4 +1,4 @@
-import React,{useState, createContext} from 'react';
+import React,{useState, createContext } from 'react';
 
 
 export const gameDataContex = createContext();
@@ -15,11 +15,12 @@ const GameDataProvider = ({children}) => {
         const initialScore = getInitialScore();
         return initialScore;
       });
-      //update user score
+      // update user score
       const updateUserScore = (score) => {
           setUserScore(score);
           sessionStorage.setItem("userScoreData", score);
       }
+
     ////
     const [userChoice, setUserChoice] = useState('');
     const [houseChoice, setHouseChoice] = useState('');
