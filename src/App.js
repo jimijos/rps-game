@@ -29,19 +29,9 @@ export default function App() {
       <div className="App"> 
       <Header />
       <Switch>
-      <Route
-            exact
-            path="/"
-            component={GameMainPage}/>
-      <Route
-            exact
-            path={`/${userChoice}`}
-            component={PlayBoard}/>
-            <Route exact path='/paper' component={GameMainPage} />
-            <Route path='/scissor' component={GameMainPage} />
-            <Route path='/rock' component={GameMainPage} />
-            <Route path='/spock' component={GameMainPage} />
-            <Route path='/lizard' component={GameMainPage} />
+        <Route exact path="/" component={GameMainPage}/>
+        <Route exact path={`/${userChoice}`} component={PlayBoard}/>
+        <Route path='/:choice' component={GameMainPage} />
       </Switch>
       <GameSceneSelector />
       <Reset />
