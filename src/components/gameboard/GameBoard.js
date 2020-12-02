@@ -1,14 +1,20 @@
-import React,{useContext} from "react";
+import React,{createContext, useContext, useState} from "react";
 import "./GameBoard.css";
 import Basic from "../gamescenes/basic/Basic";
 import PlayBoard from '../playboard/PlayBoard'
-import { choContext,  houseChoiceContext} from '../../App';
+import {gameDataContex} from '../../gamedatastore/GameDataProvider';
 
 
 
 const GameBoard = () => {
- const userChoice = useContext(choContext);
- const houseChoice = useContext(houseChoiceContext);
+  const {
+    userScore,
+    setUserScore,
+    userChoice,
+    houseChoice,
+} = useContext(gameDataContex);
+
+
 
  if(userChoice && houseChoice){
   return  (<div className="gameboard">

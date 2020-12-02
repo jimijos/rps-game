@@ -1,14 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./Basic.css";
 import CircularComponent from "../../circularcomponent/CircularComponent";
-// import {themeContext, themeUpdateContext} from '../../../App';
+
 
 
 const Basic = () => {
-  // const darkTheme = useContext(themeContext);
-  // const toggleTheme = useContext(themeUpdateContext);
-  // console.log(darkTheme, 1);
-  //give onClick={toggleTheme} in any element.
+
   return (
     <div className="basic" > 
       <div className="basic-top">

@@ -1,39 +1,44 @@
 import React,{useContext} from "react";
 import {Link} from 'react-router-dom';
 import "./CircularComponent.css";
-import {returnImage} from '../../utilityfunctions/utils'
-
-// //images
-// import paperIcon from "../../assets/icon-paper.svg";
-// import scissorIcon from "../../assets/icon-scissors.svg";
-// import rockIcon from "../../assets/icon-rock.svg";
-// // import spockIcon from "../../assets/icon-spock.svg";
-// // import lizardIcon from "../../assets/icon-lizard.svg";
-
-//Context
-import { userChoiceContext, updateUserChoiceContext, choContext } from '../../App';
+import {returnImage, getRandomElement, getGameResult, calculateScore} from '../../utilityfunctions/utils'
+import {gameDataContex} from '../../gamedatastore/GameDataProvider';
 
 
-const CircularComponent = ({ componentName }) => {
-  const userChoice = useContext(userChoiceContext); 
-  const userChoiceHandler = useContext(updateUserChoiceContext);
-  const choUser = useContext(choContext);
-  // console.log(userChoice, 1);
-  // console.log(choUser, 2);
+
+const CircularComponent = ({ componentName, choice }) => {
+  let choices = ['rock', 'paper', 'scissor'];
+
+
+  const {
+    userChoice,
+    setUserChoice,
+    houseChoice,
+    setHouseChoice,
+    setGameResult
+} = useContext(gameDataContex);
+  ////
+  let namechoice = componentName;
+  const clickHandler = (e) => {
+    setUserChoice(namechoice);
+    setHouseChoice(getRandomElement(choices));
+    setGameResult(getGameResult(userChoice, houseChoice));
+  }
   return (
-    <Link
-      to={{
-        pathname:`/`
-      }}
-      onClick={userChoiceHandler}
-      name={componentName}
-    >
-    <div className={`circularcomponent ${componentName} win`} name={componentName}>
-      <div className={`innerCircle ${componentName}`} name={componentName}>
-        {returnImage(componentName)}
+    <div className='notclickable'>
+      <Link
+        to={{
+          pathname:`/${namechoice}`
+        }}
+        onClick={clickHandler}
+      >
+      <div className={`circularcomponent ${componentName} ${choice? choice : ''}`} name={componentName}>
+        <div className={`innerCircle ${componentName}`} name={componentName}>
+          {returnImage(componentName)}
+        </div>
       </div>
+      </Link>
     </div>
-    </Link>
   );
 };
 

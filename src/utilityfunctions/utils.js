@@ -67,6 +67,7 @@ export const getGameResult = (userChoice, houseChoice) => {
 //no need to check for case 'tie' included it for readability
 // if loser looses a point logic is not needed then only case win and default is enough for the results
 export const calculateScore = (userScore, gameResult) => {
+  
     switch(gameResult.value){
         case 'win':
             return userScore + 1;
@@ -76,7 +77,7 @@ export const calculateScore = (userScore, gameResult) => {
             if(userScore <= 0){
                 return userScore;
             }else {
-                return userScore - 1;
+                return userScore -1;
             }
         default: 
             return userScore;

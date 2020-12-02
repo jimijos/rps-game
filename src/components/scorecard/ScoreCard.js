@@ -1,11 +1,15 @@
-import React from "react";
+import React,{useContext} from "react";
 import "./ScoreCard.css";
+import {gameDataContex} from '../../gamedatastore/GameDataProvider';
 
 const ScoreCard = () => {
+    const {
+        userScore
+    } = useContext(gameDataContex);
   return (
     <div className="scorecard">
       <h3>SCORE</h3>
-      <p>12</p>
+      <p>{userScore}</p>
     </div>
   );
 };

@@ -1,58 +1,80 @@
-import React,{useState, createContext, useEffect} from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import React,{useState, useContext } from "react";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import "./styles.css";
 //components
-import Header from "./components/header/Header";
-import GameBoard from "./components/gameboard/GameBoard";
+import GameMainPage from './components/gamemainpage/GameMainPage'
+import Header from './components/header/Header'
 import RulesButton from './components/rules/RulesButton';
-import BasicRules from './components/rules/basicrules/BasicRules'
-import {choices, getRandomElement} from './utilityfunctions/utils';
+import BasicRules from './components/rules/basicrules/BasicRules';
+import PlayBoard from "./components/playboard/PlayBoard";
 //Contexts
-export const userChoiceContext = createContext();
-export const updateUserChoiceContext = createContext()
-//user and house choices
-export const choContext = createContext();
-export const houseChoiceContext = createContext();
+import {gameDataContex} from './gamedatastore/GameDataProvider';
+
+
+
+
+
 
 export default function App() {
-  const [userChoice, setUserChoice] = useState('');
-  const [houseChoice, setHouseChoice] =useState('')
-  const choiceHandler = ({target:{classList}}) => {
-    setUserChoice(() => classList[1])
-    setHouseChoice(getRandomElement(choices))
-    setCho('')
-    // console.log(userChoice, 1)
-  }
-  const [cho, setCho] = useState('')
-  useEffect(() => {
-    setCho(userChoice);
-    // console.log(userChoice,'use')
-  },[userChoice])
+  const {
+    userChoice
+} = useContext(gameDataContex);
+
   const [rulesClicked, setRulesClicked] = useState(false);
   const showRules = () => {
     setRulesClicked(!rulesClicked);
-    }   
+    } 
+
   return (
-  //  <themeContext.Provider value={rulesClicked}>
-  //    <themeUpdateContext.Provider value={showRules}>
-  <choContext.Provider value={cho}>
-  <houseChoiceContext.Provider value={houseChoice}>
-  <userChoiceContext.Provider value={userChoice}>
-    <updateUserChoiceContext.Provider value={choiceHandler}>
     <Router>
-      <div className="App">  
-        <Header />
-        <GameBoard />
-        <RulesButton handleClick={showRules}/>
-        <BasicRules rulescard={rulesClicked} handleClick={showRules}/>
+      <div className="App"> 
+      <Header />
+      <Switch>
+      <Route
+            exact
+            path="/"
+            render={(props) => (<GameMainPage />)}/>
+      <Route
+            exact
+            path={`/${userChoice}`}
+            render={userChoice? (props) => (<PlayBoard />) : (props) => (<GameMainPage />)}/>
+            <Redirect exact from={`/${userChoice}`} to="/" />
+      </Switch>
+      <RulesButton handleClick={showRules}/>
+      <BasicRules rulescard={rulesClicked} handleClick={showRules}/>
       </div>
     </Router>
-     </updateUserChoiceContext.Provider>
-   </userChoiceContext.Provider>
-   </houseChoiceContext.Provider>
-   </choContext.Provider>
-  //   </themeUpdateContext.Provider>
-  // </themeContext.Provider>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // const choiceHandler = ({target:{classList}}) => {
+  //   setUser(() => classList[1])
+  //   setHouse(getRandomElement(choices))
+  //   setCho('')
+  //   // console.log(userChoice, 1)
+  // }
