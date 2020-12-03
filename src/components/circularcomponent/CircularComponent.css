@@ -137,3 +137,24 @@
     height: 7rem;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .circularcomponent {
+    width: 8rem;
+    height: 8rem;
+  }
+  .innerCircle {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .basic .basic-top{
+    transform: translate(0, -40%);
+  }
+  .basic .basic-bottom{
+    transform: translate(0, 20%);
+  }
+  .mainpage {
+    width: 32rem;
+  }
+}

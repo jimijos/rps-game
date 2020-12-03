@@ -1,8 +1,7 @@
-import React,{useState, createContext } from 'react';
+import React,{useState, createContext} from 'react';
 
 
 export const gameDataContex = createContext();
-
 const GameDataProvider = ({children}) => {
     const getInitialScore = () => {
         let initialScore = 0;

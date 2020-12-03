@@ -66,7 +66,7 @@
     margin: 0 auto;
     /* top: 125px;
     left: 400px; */
-    transform: translate(-21.5%, 11.5%);
+    transform: translate(0, 11.5%);
     width: 12rem;
     height: 12rem;
     background: #182341;
@@ -89,7 +89,7 @@
 
   @media only screen and (max-width: 1000px) {
     .playboard {
-        width: 36rem;
+        width: 100%;
     }
     .playboard .circularcomponent {
         width: 12rem;
@@ -102,16 +102,57 @@
     .playboard .circular-spot {
         position: absolute;
         margin: 0 auto;
-        transform: translate(-120%, 10%);
+        transform: translate(50%, 10%);
         width: 9rem;
         height: 9rem;
         background: #182341;
         border-radius: 50%;
     }
     .playboard h2 {
+        width: 100%;
         font-size: 1.2rem;
     }
+
+
+    @keyframes spot {
+        0%   {left: 500px}
+        25%  {left: 500px}
+        50%  {left: 600px}
+        75%  {left: 600px}
+        100% {left: 640px}
+      }
 }
+
+
+@media only screen and (max-width: 920px) {
+    @keyframes spot {
+        0%   {left: 500px}
+        25%  {left: 500px}
+        50%  {left: 600px}
+        75%  {left: 600px}
+        100% {left: 600px}
+      }
+}
+
+@media only screen and (max-width: 920px) {
+    @keyframes spot {
+        0%   {left: 500px}
+        25%  {left: 500px}
+        50%  {left: 540px}
+        75%  {left: 555px}
+        100% {left: 555px}
+      }
+}
+@media only screen and (max-width: 810px) {
+    @keyframes spot {
+        0%   {left: 500px}
+        25%  {left: 500px}
+        50%  {left: 535px}
+        75%  {left: 535px}
+        100% {left: 535px}
+      }
+}
+
 
 @media only screen and (max-width: 710px) {
     .playboard .playagain.visible {
@@ -119,11 +160,12 @@
         top: 100%;
     }
     .playboard .playagain.visible h1{
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
-}
-
-@media only screen and (max-width: 710px) {
+    .playboard h2 {
+        width: 100%;
+        font-size: 1rem;
+    }
     .sceneselector, .reset, .basicrules {
         position: absolute;
         width: 70px;
@@ -136,16 +178,23 @@
         font-size: 0.5rem;
         outline: none;
     }
+    .reset {
+        right: 2rem;
+    }
+    .sceneselector {
+        left: 2rem;
+        bottom: 2rem;
+    }
 
     .playboard .circular-spot {
         width: 7rem;
         height: 7rem;
-        /* transform: translate(-210%, 10%); */
+        transform: translate(-100%, 10%);
         animation: spot1 .1s ease-in forwards;
     }
     @keyframes spot1 {
         0% {left: 470px}
-        100% {left: 470px}
+        100% {left: 530px;}
       }
       .playboard .circularcomponent {
         width: 10rem;
@@ -155,7 +204,40 @@
         width: 7rem;
         height: 7rem;
     }
-    .playboard .playagain.visible h1{
+}
+
+@media only screen and (max-width: 614px) {
+    .playboard .circular-spot {
+        width: 7rem;
+        height: 7rem;
+        transform: translate(-160%, 10%);
+        animation: spot1 .1s ease-in forwards;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .playboard .circular-spot {
+        width: 7rem;
+        height: 7rem;
+        transform: translate(-220%, 10%);
+        animation: spot1 .1s ease-in forwards;
+    }
+    @keyframes spot1 {
+        0% {left: 470px}
+        100% {left: 470px;}
+      }
+
+      .playboard .playagain.visible h1{
         font-size: 1.2rem;
+    }
+
+    .playboard-card {
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .playboard-card h2 {
+        padding: 10% 0 2% 0;
     }
 }

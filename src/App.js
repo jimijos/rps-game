@@ -1,4 +1,4 @@
-import React,{useState, useContext } from "react";
+import React,{useState, useContext, useEffect} from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./styles.css";
 //components

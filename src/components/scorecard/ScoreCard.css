@@ -19,3 +19,17 @@
   font-size: 3.5rem;
   font-weight: bolder;
 }
+
+@media only screen and (max-width: 500px) {
+  .scorecard h3 {
+    font-size: 0.6rem;
+  }
+  .scorecard p {
+    font-size: 2.2rem;
+    font-weight: bolder;
+  }
+  /* .header .logo {
+    width: 2rem;
+    padding: 2% auto;
+  } */
+}
