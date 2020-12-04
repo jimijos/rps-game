@@ -219,7 +219,7 @@
     .playboard .circular-spot {
         width: 7rem;
         height: 7rem;
-        transform: translate(-220%, 10%);
+        transform: translate(-190%, 10%);
         animation: spot1 .1s ease-in forwards;
     }
     @keyframes spot1 {
@@ -239,5 +239,28 @@
     }
     .playboard-card h2 {
         padding: 10% 0 2% 0;
+    }
+
+    .reset {
+        right: 0.8rem;
+        bottom: 2.3rem;
+    }
+    .sceneselector {
+        left: 0.8rem;
+        bottom: 0rem;
+    }
+    .basicrules {
+        right: 0.8rem;
+        bottom: 0rem;
+    }
+
+}
+
+@media only screen and (max-width: 440px) { 
+    .playboard .circular-spot {
+        width: 7rem;
+        height: 7rem;
+        transform: translate(-220%, 10%);
+        animation: spot1 .1s ease-in forwards;
     }
 }

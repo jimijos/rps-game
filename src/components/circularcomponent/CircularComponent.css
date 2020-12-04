@@ -148,6 +148,26 @@
     height: 5rem;
   }
 
+  .circularcomponent.advanced {
+    width: 6.2rem;
+    height: 6.2rem;
+    border-radius: 50%;
+}
+  .innerCircle.advanced {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.advanced-top {
+  transform: translate(0, -30%);
+}
+.advanced-middle {
+  transform: translate(0, -30%);
+}
+.advanced-bottom {
+  transform: translate(0, 30%);
+}
+
   .basic .basic-top{
     transform: translate(0, -40%);
   }
