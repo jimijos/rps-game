@@ -1,5 +1,4 @@
 import React,{useState, useContext } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./styles.css";
 //components
 import GameMainPage from './components/gamemainpage/GameMainPage'
@@ -16,7 +15,8 @@ import {gameDataContex} from './gamedatastore/GameDataProvider';
 
 export default function App() {
   const {
-    userChoice
+    userChoice,
+    houseChoice
 } = useContext(gameDataContex);
 
   const [rulesClicked, setRulesClicked] = useState(false);
@@ -25,20 +25,14 @@ export default function App() {
     } 
 
   return (
-    <Router>
       <div className="App"> 
-      <Header />
-      <Switch>
-        <Route exact path="/" component={GameMainPage}/>
-        <Route exact path={`/${userChoice}`} component={PlayBoard}/>
-        <Route path='/:choice' component={GameMainPage} />
-      </Switch>
-      <GameSceneSelector />
-      <Reset />
-      <RulesButton handleClick={showRules}/>
-      <BasicRules rulescard={rulesClicked} handleClick={showRules}/>
+        <Header />
+        {(userChoice && houseChoice)? <PlayBoard /> : <GameMainPage />}
+        <GameSceneSelector />
+        <Reset />
+        <RulesButton handleClick={showRules}/>
+        <BasicRules rulescard={rulesClicked} handleClick={showRules}/>
       </div>
-    </Router>
   );
 }
 

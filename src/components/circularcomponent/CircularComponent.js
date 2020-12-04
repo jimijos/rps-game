@@ -1,7 +1,6 @@
 import React,{useContext} from "react";
-import {Link} from 'react-router-dom';
 import "./CircularComponent.css";
-import { returnImage, getRandomElement } from '../../utilityfunctions/utils'
+import { returnImage, getRandomElement, getGameResult } from '../../utilityfunctions/utils'
 import {gameDataContex} from '../../gamedatastore/GameDataProvider';
 
 
@@ -9,12 +8,11 @@ import {gameDataContex} from '../../gamedatastore/GameDataProvider';
 
 const CircularComponent = ({ componentName, choice }) => { 
   const {
-    userScore,
+    userChoice,
     setUserChoice,
+    houseChoice,
     setHouseChoice,
-    gameResult,
     setGameResult,
-    updateUserScore,
     isAdvanced
 } = useContext(gameDataContex);
 
@@ -26,23 +24,16 @@ const CircularComponent = ({ componentName, choice }) => {
   const clickHandler = (e) => {
     setUserChoice(namechoice);
     setHouseChoice(getRandomElement(choices));
-    setGameResult(gameResult);
-    updateUserScore(userScore, gameResult);
+    setGameResult(getGameResult(userChoice, houseChoice));
   }
+
   return (
     <div className='notclickable'>
-      <Link
-        to={{
-          pathname:`/${namechoice}`
-        }}
-        onClick={clickHandler}
-      >
-      <div className={`circularcomponent ${isAdvanced? 'advanced' : 'basic'} ${componentName} ${choice? choice : ''}`} name={componentName}>
-        <div className={`innerCircle ${isAdvanced? 'advanced' : 'basic'} ${componentName}`} name={componentName}>
-          {returnImage(componentName)}
+      <div onClick={clickHandler} className={`circularcomponent ${isAdvanced? 'advanced' : 'basic'} ${componentName} ${choice? choice : ''}`} name={componentName}>
+        <div onClick={clickHandler} className={`innerCircle ${isAdvanced? 'advanced' : 'basic'} ${componentName}`} name={componentName}>
+          {returnImage(componentName, clickHandler)}
         </div>
       </div>
-      </Link>
     </div>
   );
 };

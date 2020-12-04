@@ -16,22 +16,22 @@ export const getRandomElement = (array) => {
 
 //get the image for the circular compoent
 
-export const returnImage = (componentName) => {
+export const returnImage = (componentName, clickHandler) => {
     switch (componentName) {
       case "paper":
-        return <img src={paperIcon} className={`${componentName}`} alt="paper"/>;
+        return <img onClick={clickHandler} src={paperIcon} className={`${componentName}`} alt="paper"/>;
 
       case "scissor":
-        return <img src={scissorIcon} className={`${componentName}`} alt="scissor"/>
+        return <img onClick={clickHandler} src={scissorIcon} className={`${componentName}`} alt="scissor"/>
 
       case "rock":
-        return <img src={rockIcon} className={`${componentName}`} alt="rock"/>;
+        return <img onClick={clickHandler} src={rockIcon} className={`${componentName}`} alt="rock"/>;
       case "spock":
-        return  <img src={spockIcon} className={`${componentName}`} alt="scissor"/>
+        return  <img onClick={clickHandler} src={spockIcon} className={`${componentName}`} alt="scissor"/>
  
     
       case "lizard":
-        return <img src={lizardIcon} className={`${componentName}`} alt="rock"/>;
+        return <img onClick={clickHandler} src={lizardIcon} className={`${componentName}`} alt="rock"/>;
       default:
         return null;
     }

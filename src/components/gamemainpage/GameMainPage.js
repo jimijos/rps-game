@@ -6,7 +6,7 @@ import {gameDataContex} from '../../gamedatastore/GameDataProvider';
 
 const GameMainPage = () => {
      const {
-          isAdvanced
+          isAdvanced,
       } = useContext(gameDataContex);
       return isAdvanced? <div className='mainpage advanced'><Advanced /></div> :  <div className='mainpage'><Basic /></div>
     }

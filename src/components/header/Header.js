@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-
 import "./Header.css";
 //sub components
 import ScoreCard from "../scorecard/ScoreCard";
