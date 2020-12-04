@@ -260,7 +260,7 @@
     .playboard .circular-spot {
         width: 7rem;
         height: 7rem;
-        transform: translate(-220%, 10%);
+        transform: translate(-220%, -10%);
         animation: spot1 .1s ease-in forwards;
     }
 }
