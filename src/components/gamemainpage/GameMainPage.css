@@ -1,45 +1,44 @@
 .mainpage {
- position: absolute;
- padding: 3% 8% 1% 8%;
- top: 50%;
- left: 50%;
- -webkit-transform: translate(-50%, -35%);
- transform: translate(-50%, -35%);
- width: 48rem;
- height: 35rem;
+  position: absolute;
+  padding: 3% 8% 1% 8%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -35%);
+  transform: translate(-50%, -35%);
+  width: 48rem;
+  height: 35rem;
 }
 
 .mainpage.advanced {
-    width: 46rem;
-    height: 36rem;
+  width: 46rem;
+  height: 36rem;
 }
 
 @media only screen and (max-width: 1000px) {
-    .mainpage.advanced {
-        width: 40rem;
-        height: 36rem;
-    }
+  .mainpage.advanced {
+    width: 40rem;
+    height: 36rem;
+  }
 }
 
 @media only screen and (max-width: 700px) {
-    .mainpage.advanced {
-        width: 35rem;
-        height: 35rem;
-    }
+  .mainpage.advanced {
+    width: 35rem;
+    height: 35rem;
+  }
 }
 
 @media only screen and (max-width: 550px) {
-    .mainpage.advanced {
-        width: 30rem;
-        height: 32rem;
-    }
+  .mainpage.advanced {
+    width: 30rem;
+    height: 32rem;
+  }
 }
 
-
 @media only screen and (max-width: 500px) {
-    .mainpage.advanced {
-        transform: translate(-50%, -35%);
-        width: 26.5rem;
-        height: 20rem;
-    }
+  .mainpage.advanced {
+    transform: translate(-50%, -35%);
+    width: 26.5rem;
+    height: 20rem;
+  }
 }
